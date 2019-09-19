@@ -1,4 +1,4 @@
-// r106
+// r108
 
 const staticAssets = [
 	'./',
@@ -13,12 +13,8 @@ const staticAssets = [
 	'../examples/js/libs/chevrotain.min.js',
 	'../examples/js/libs/jszip.min.js',
 	'../examples/js/libs/inflate.min.js',
-	'../examples/js/libs/lzma.js',
-	'../examples/js/libs/ctm.js',
 
 	'../examples/js/loaders/AMFLoader.js',
-	'../examples/js/loaders/AWDLoader.js',
-	'../examples/js/loaders/BabylonLoader.js',
 	'../examples/js/loaders/ColladaLoader.js',
 	'../examples/js/loaders/DRACOLoader.js',
 	'../examples/js/loaders/FBXLoader.js',
@@ -28,7 +24,6 @@ const staticAssets = [
 	'../examples/js/loaders/MD2Loader.js',
 	'../examples/js/loaders/OBJLoader.js',
 	'../examples/js/loaders/MTLLoader.js',
-	'../examples/js/loaders/PlayCanvasLoader.js',
 	'../examples/js/loaders/PLYLoader.js',
 	'../examples/js/loaders/STLLoader.js',
 	'../examples/js/loaders/SVGLoader.js',
@@ -36,7 +31,6 @@ const staticAssets = [
 	'../examples/js/loaders/TDSLoader.js',
 	'../examples/js/loaders/VRMLLoader.js',
 	'../examples/js/loaders/VTKLoader.js',
-	'../examples/js/loaders/ctm/CTMLoader.js',
 
 	'../examples/js/exporters/ColladaExporter.js',
 	'../examples/js/exporters/GLTFExporter.js',
@@ -169,9 +163,10 @@ const staticAssets = [
 	'./js/commands/RemoveScriptCommand.js',
 	'./js/commands/SetScriptValueCommand.js',
 	'./js/commands/SetMaterialCommand.js',
-	'./js/commands/SetMaterialValueCommand.js',
 	'./js/commands/SetMaterialColorCommand.js',
 	'./js/commands/SetMaterialMapCommand.js',
+	'./js/commands/SetMaterialValueCommand.js',
+	'./js/commands/SetMaterialVectorCommand.js',
 	'./js/commands/SetSceneCommand.js',
 
 	//

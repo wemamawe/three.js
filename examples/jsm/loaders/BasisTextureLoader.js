@@ -6,10 +6,10 @@
 
 import {
 	CompressedTexture,
-	DefaultLoadingManager,
 	FileLoader,
 	LinearFilter,
-	LinearMipMapLinearFilter,
+	LinearMipmapLinearFilter,
+	Loader,
 	RGB_ETC1_Format,
 	RGB_PVRTC_4BPPV1_Format,
 	UnsignedByteType
@@ -31,9 +31,7 @@ import {
  */
 var BasisTextureLoader = function ( manager ) {
 
-	this.manager = manager || DefaultLoadingManager;
-
-	this.crossOrigin = 'anonymous';
+	Loader.call( this, manager );
 
 	this.transcoderPath = '';
 	this.transcoderBinary = null;
@@ -52,17 +50,9 @@ var BasisTextureLoader = function ( manager ) {
 
 };
 
-BasisTextureLoader.prototype = {
+BasisTextureLoader.prototype = Object.assign( Object.create( Loader.prototype ), {
 
 	constructor: BasisTextureLoader,
-
-	setCrossOrigin: function ( crossOrigin ) {
-
-		this.crossOrigin = crossOrigin;
-
-		return this;
-
-	},
 
 	setTranscoderPath: function ( path ) {
 
@@ -179,7 +169,7 @@ BasisTextureLoader.prototype = {
 
 				}
 
-				texture.minFilter = mipmaps.length === 1 ? LinearFilter : LinearMipMapLinearFilter;
+				texture.minFilter = mipmaps.length === 1 ? LinearFilter : LinearMipmapLinearFilter;
 				texture.magFilter = LinearFilter;
 				texture.generateMipmaps = false;
 				texture.needsUpdate = true;
@@ -326,7 +316,8 @@ BasisTextureLoader.prototype = {
 		return this;
 
 	}
-};
+
+} );
 
 /* CONSTANTS */
 
